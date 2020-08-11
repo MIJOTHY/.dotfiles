@@ -33,9 +33,9 @@ alt  - 5 : yabai -m space --focus 5
 alt  - 6 : yabai -m space --focus 6
 
 # Cleanup
-## clean empty spaces
+## clean empty spaces in reverse order so we don't cause reflow
 alt + shift - c : yabai -m query --spaces \
-                  | jq --raw-output '.[] | reverse(select(.windows == [])) | .index' \
+                  | jq --raw-output 'reverse | .[] | select(.windows == []) | .index' \
                   | while read spaceIdx; do \
                       echo $spaceIdx; \
                       yabai -m space $spaceIdx --destroy; \
