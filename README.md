@@ -1,8 +1,21 @@
 # jimbob's .dotfiles
 
+## Tools used
+[nix-darwin](https://daiderd.com/nix-darwin): system-level configuration  
+[home-manager](https://github.com/rycee/home-manager): user-level configuration  
+
+## Inspiration repos
+https://github.com/martinbaillie/dotfiles  
+https://github.com/hlissner/dotfiles  
+https://github.com/jwiegley/nix-config  
+https://github.com/eqyiel  
+
 # TODO:
 ### Docs
 - [ ] document architecture
+- [ ] inspiration repos
+- [ ] steps to bootstrap
+- [ ] why
 
 ### Architecture 
 - [ ] pull together the darwin desktop stuff  
@@ -13,6 +26,7 @@
 ### Infra
 - [ ] CI  
 - [ ] repo for `.private` stuff  
+- [ ] use separate disk for `/Applications` indexing
 
 ### desktop
 - [ ] configure skhd app-opening with variables available to nix  
