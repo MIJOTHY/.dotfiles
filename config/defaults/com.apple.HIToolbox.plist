@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AppleCurrentKeyboardLayoutInputSourceID</key>
+	<string>com.apple.keylayout.British-PC</string>
+	<key>AppleEnabledInputSources</key>
+	<array>
+		<dict>
+			<key>Bundle ID</key>
+			<string>com.apple.inputmethod.EmojiFunctionRowItem</string>
+			<key>InputSourceKind</key>
+			<string>Non Keyboard Input Method</string>
+		</dict>
+		<dict>
+			<key>InputSourceKind</key>
+			<string>Keyboard Layout</string>
+			<key>KeyboardLayout ID</key>
+			<integer>250</integer>
+			<key>KeyboardLayout Name</key>
+			<string>British-PC</string>
+		</dict>
+	</array>
+	<key>AppleInputSourceHistory</key>
+	<array>
+		<dict>
+			<key>InputSourceKind</key>
+			<string>Keyboard Layout</string>
+			<key>KeyboardLayout ID</key>
+			<integer>250</integer>
+			<key>KeyboardLayout Name</key>
+			<string>British-PC</string>
+		</dict>
+		<dict>
+			<key>InputSourceKind</key>
+			<string>Keyboard Layout</string>
+			<key>KeyboardLayout ID</key>
+			<integer>2</integer>
+			<key>KeyboardLayout Name</key>
+			<string>British</string>
+		</dict>
+	</array>
+	<key>AppleSelectedInputSources</key>
+	<array>
+		<dict>
+			<key>Bundle ID</key>
+			<string>com.apple.inputmethod.EmojiFunctionRowItem</string>
+			<key>InputSourceKind</key>
+			<string>Non Keyboard Input Method</string>
+		</dict>
+		<dict>
+			<key>InputSourceKind</key>
+			<string>Keyboard Layout</string>
+			<key>KeyboardLayout ID</key>
+			<integer>250</integer>
+			<key>KeyboardLayout Name</key>
+			<string>British-PC</string>
+		</dict>
+	</array>
+</dict>
+</plist>
