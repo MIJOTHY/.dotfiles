@@ -16,6 +16,7 @@
           IgnoreUnknown UseKeychain
           UseKeychain yes
           AddKeysToAgent yes
+          IdentitiesOnly yes
         '';
         matchBlocks = {
           "github.com" = {
