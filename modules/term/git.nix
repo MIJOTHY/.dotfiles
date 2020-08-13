@@ -23,14 +23,17 @@
           name = ${config.my.fullname}
           email = ${config.my.personal.email}
 
+      [pull]
+          ff = only
+
       [includeIf "gitdir:~/${config.my.personal.dir}/"]
-      	  path = ~/${config.my.personal.dir}/.gitconfig
+          path = ~/${config.my.personal.dir}/.gitconfig
 
       [includeIf "gitdir:~/${config.my.work.dir}/"]
-      	  path = ~/${config.my.work.dir}/.gitconfig
+          path = ~/${config.my.work.dir}/.gitconfig
 
       [core]
-      	  editor = vim
+          editor = vim
       '';
     };
   };
