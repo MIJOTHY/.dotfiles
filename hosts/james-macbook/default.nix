@@ -11,7 +11,7 @@
     <modules/editors/emacs.nix>
     <modules/editors/nvim.nix>
 
-    # <modules/ops>
+    <modules/ops>
 
     <modules/term>
     <modules/term/direnv.nix>
