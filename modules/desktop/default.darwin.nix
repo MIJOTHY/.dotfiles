@@ -41,6 +41,9 @@
         { HIDKeyboardModifierMappingSrc = 30064771129; # Caps Lock
           HIDKeyboardModifierMappingDst = 30064771302; # Right option
         }
+        { HIDKeyboardModifierMappingSrc = 30064771130; # Windows key (left option)
+          HIDKeyboardModifierMappingDst = 30064771127; # Command
+        }
       ];
     };
 
