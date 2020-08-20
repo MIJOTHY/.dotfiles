@@ -2,7 +2,7 @@
   my = {
     packages = with pkgs; [
       terraform
-      awscli
+      awscli2
     ];
 
     casks = [ 
