@@ -28,11 +28,7 @@
     };
   };
 
-  system.activationScripts.postUserActivation.text =
-    #FIXME
-   ''
-      echo "reloading skhd"
-      echo "${pkgs.skhd}/bin/skhd"
-      "${pkgs.skhd}/bin/skhd" --reload
-  '';
+  my.packages = [
+    pkgs.skhd
+  ];
 }
