@@ -23,7 +23,7 @@
         # FIXME: hack for not having applications available in the env
         app < alt - w : open -na /Applications/Nix/Firefox.app
         app < alt - e : open -na /Applications/Nix/Emacs.app
-        app < alt - t : open -na /Applications/Nix/kitty.app
+        app < alt - t : iTerm2
       '' + builtins.readFile <config/skhd/rc>;
     };
   };
