@@ -80,9 +80,17 @@ gc:
 test: $(NIX_REBUILD) test
 .PHONY: test
 
-switch: 	; $(NIX_REBUILD) switch
-rollback: 	; $(NIX_REBUILD) switch --rollback
-upgrade: 	; $(NIX_REBUILD) switch --upgrade
-boot: 		; $(NIX_REBUILD) boot
-dry: 		; $(NIX_REBUILD) dry-build
+switch: 	
+	$(NIX_REBUILD) switch
+	doom sync
+rollback: 	
+	  $(NIX_REBUILD) switch --rollback
+	  doom sync
+upgrade: 	
+	  $(NIX_REBUILD) switch --upgrade
+	  doom sync
+boot: 		
+	  $(NIX_REBUILD) boot
+dry: 		
+	  $(NIX_REBUILD) dry-build
 .PHONY:		switch rollback boot dry
