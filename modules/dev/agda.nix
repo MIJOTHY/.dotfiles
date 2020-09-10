@@ -3,7 +3,16 @@ with lib;
 {
   config = {
     my.packages = with pkgs; [
-      haskellPackages.Agda
+      (agda.withPackages (p: [ p.standard-library ]))
     ];
+
+    my.home.home.file = {
+      defaults = {
+        target = ".agda/defaults";
+        text = ''
+          standard-library
+        '';
+      };
+    };
   };
 }
