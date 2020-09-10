@@ -48,8 +48,11 @@
 ;; our package manager can't deal with; see raxod502/straight.el#279)
 ;(package! builtin-package :recipe (:branch "develop"))
 
-(use-package! agda-mode
-  :mode "\\.lagda\\.md$")
+(setq auto-mode-alist
+   (append
+     '(("\\.agda\\'" . agda2-mode)
+       ("\\.lagda.md\\'" . agda2-mode))
+     auto-mode-alist))
 
 ;; jenkins mode
 ;; (load! "jenkinsfile/jenkinsfile-mode.el")
@@ -57,3 +60,6 @@
 ;; atl-mode
 ;; (load! "atl/atl-mode.el")
 ;; (setq atl-lsp-jar "~/.doom.d/atl/atl-lsp-0.7.0-SNAPSHOT-standalone.jar")
+
+(use-package! groovy-mode
+  :mode "\\.groovy\\'")

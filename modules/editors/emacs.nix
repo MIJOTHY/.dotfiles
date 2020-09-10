@@ -32,13 +32,6 @@ with lib;
         zstd                # for undo-fu-session/undo-tree compression
 
         ## Module dependencies
-        # :checkers spell
-        aspell
-        aspellDicts.en
-        aspellDicts.en-computers
-        aspellDicts.en-science
-        # :checkers grammar
-        languagetool
         # :tools editorconfig
         editorconfig-core-c # per-project style config
         # :tools lookup & :lang org +roam
