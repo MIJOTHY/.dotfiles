@@ -8,7 +8,7 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
-  # Create /etc/bashrc that loads the nix-darwin environment.
+  # Create /etc/zshrc that loads the nix-darwin environment.
   programs.zsh.enable = true;  
   environment.shells = [ pkgs.zsh ];
 
@@ -47,18 +47,14 @@
   });
 
   system.activationScripts.applications.text = pkgs.lib.mkForce (''
-      echo "setting up ~/Applications/Nix..."
-      rm -rf ~/Applications/Nix
+      echo "setting up /Applications/Nix..."
       rm -rf /Applications/Nix
-      mkdir -p ~/Applications/Nix
       mkdir -p /Applications/Nix
-      chown ${config.my.username} ~/Applications/Nix
       chown ${config.my.username} /Applications/Nix
       echo "Looking for files in ${config.system.build.applications}/Applications"
       find ${config.system.build.applications}/Applications -maxdepth 1 -type l | while read f; do
         src="$(/usr/bin/stat -f%Y $f)"
         appname="$(basename $src)"
-        osascript -e "tell app \"Finder\" to make alias file at POSIX file \"/Users/${config.my.username}/Applications/Nix/\" to POSIX file \"$src\" with properties {name: \"$appname\"}";
         osascript -e "tell app \"Finder\" to make alias file at POSIX file \"/Applications/Nix/\" to POSIX file \"$src\" with properties {name: \"$appname\"}";
     done
   '');
