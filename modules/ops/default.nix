@@ -5,6 +5,7 @@
       awscli2
       aws-iam-authenticator
       kubectl
+      kustomize
     ];
 
     casks = [ 
