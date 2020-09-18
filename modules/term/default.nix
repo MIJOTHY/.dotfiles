@@ -32,7 +32,6 @@
       entr
       file
       jq
-      my.iTerm2
       lastpass-cli
       yq
       zip
