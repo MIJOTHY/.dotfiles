@@ -8,6 +8,16 @@
         oh-my-zsh = {
           enable = true;
         };
+
+        dotDir = ".config/zsh";
+        initExtra = ''
+          source $ZDOTDIR/config.zsh
+
+          # Tool-specific RCs.
+          for file in $ZDOTDIR/rc.d/rc.*.zsh; do
+              source $file
+          done
+        '';
       };
 
       xdg.configFile."zsh" = {
@@ -29,8 +39,10 @@
       (ripgrep.override { withPCRE2 = true; })
     ];
 
+    env.ZSH = "${pkgs.oh-my-zsh}/share/oh-my-zsh/";
     env.ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
     env.ZSH_CACHE = "$XDG_CACHE_HOME/zsh";
-    
   };
+
+  environment.pathsToLink = [ "/share/zsh" ];
 }

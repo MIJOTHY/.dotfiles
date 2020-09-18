@@ -36,6 +36,8 @@
   '';
 
   my = {
+    user.home = "/Users/griffithsjr";
+   
     personal = {
       dir = "personal";
       username = "MIJOTHY";
