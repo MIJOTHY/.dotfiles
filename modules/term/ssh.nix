@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 {
   my = {
     home = {
@@ -17,7 +17,6 @@
           UseKeychain yes
           AddKeysToAgent yes
           IdentitiesOnly yes
-          IdentityFile ~/.ssh/id_rsa_personal
         '';
         matchBlocks = {
           "github.com" = {
