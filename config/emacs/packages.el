@@ -60,6 +60,3 @@
 ;; atl-mode
 ;; (load! "atl/atl-mode.el")
 ;; (setq atl-lsp-jar "~/.doom.d/atl/atl-lsp-0.7.0-SNAPSHOT-standalone.jar")
-
-(use-package! groovy-mode
-  :mode "\\.groovy\\'")
