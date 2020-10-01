@@ -11,6 +11,8 @@
     <modules/editors/emacs.nix>
     <modules/editors/nvim.nix>
 
+    <modules/media>
+
     <modules/ops>
 
     <modules/term>
