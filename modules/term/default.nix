@@ -15,6 +15,8 @@
             alias l='exa -1a'
             alias ll='exa -la'
             alias lt='exa -lm -s modified'
+            alias cat='bat'
+            alias diff='delta'
           '';
       };
 
@@ -22,6 +24,9 @@
         fzf = {
           enable = true;
           enableZshIntegration = true;
+        };
+        bat = {
+          enable = true;
         };
       };
     };
@@ -31,6 +36,7 @@
       curl
       entr
       file
+      gitAndTools.delta
       jq
       lastpass-cli
       yq

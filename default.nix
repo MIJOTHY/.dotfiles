@@ -22,15 +22,17 @@ in {
     secrets = import ./.private/secrets.nix;
 
     # Homedir.
-    home.xdg = {
-      enable = true;
-      configFile."zsh/rc.d/rc.nix.zsh".text = ''
-        alias nix-env="NIXPKGS_ALLOW_UNFREE=1 nix-env"
-        alias nix-shell="NIXPKGS_ALLOW_UNFREE=1 nix-shell"
-        alias nix-test="make -C ${pwd} test"
-        alias nix-switch="make -C ${pwd} switch"
-        alias nix-rollback="make -C ${pwd} switch --rollback"
-      '';
+    home = {
+      xdg = {
+        enable = true;
+        configFile."zsh/rc.d/rc.nix.zsh".text = ''
+          alias nix-env="NIXPKGS_ALLOW_UNFREE=1 nix-env"
+          alias nix-shell="NIXPKGS_ALLOW_UNFREE=1 nix-shell"
+          alias nix-test="make -C ${pwd} test"
+          alias nix-switch="make -C ${pwd} switch"
+          alias nix-rollback="make -C ${pwd} switch --rollback"
+        '';
+      };
     };
   };
 
@@ -54,4 +56,3 @@ in {
     };
   };
 }
-
