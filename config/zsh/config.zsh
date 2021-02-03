@@ -34,3 +34,7 @@ unsetopt AUTO_NAME_DIRS     # Don't add variable-stored paths to ~ list
 
 bindkey -v
 bindkey 'jk' vi-cmd-mode
+
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey -M vicmd v edit-command-line
