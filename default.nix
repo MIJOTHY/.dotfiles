@@ -45,6 +45,7 @@ in {
 
       PATH = "$PATH:$XDG_BIN_HOME";
 
+      EDITOR = "vim";
       # Location, timezone and internationalisation.
       TZ = "Europe/London";
       LC_ALL = "en_GB.UTF-8";
