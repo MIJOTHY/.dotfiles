@@ -8,7 +8,17 @@
           enable = true;
           userName = config.my.fullname;
           userEmail = config.my.personal.email;
+          delta = {
+            enable = true;
+            options = {
+              line-numbers = true;
+              side-by-side = true;
+            };
+          };
           extraConfig = {
+            diff = {
+              colorMoved = "default";
+            };
             pull = {
               ff = "only";
             };
