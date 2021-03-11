@@ -6,5 +6,7 @@
     nixfmt
     rnix-lsp
     niv
+
+    plantuml
   ];
 }
