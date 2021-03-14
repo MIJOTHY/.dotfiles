@@ -8,7 +8,6 @@ in {
   imports = flatten [
     # Configuration options.
     ./options.nix
-    ./darwin-configuration.nix
   ];
 
   nix = {
