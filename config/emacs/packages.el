@@ -54,6 +54,8 @@
        ("\\.lagda.md\\'" . agda2-mode))
      auto-mode-alist))
 
+(setq plantuml-default-exec-mode 'executable)
+
 ;; jenkins mode
 ;; (load! "jenkinsfile/jenkinsfile-mode.el")
 
