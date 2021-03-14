@@ -2,6 +2,7 @@
   imports = [
     ../../.
 
+    ../../darwin-configuration.nix
     <modules/desktop>
 
     <modules/dev>
