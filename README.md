@@ -11,6 +11,8 @@ https://github.com/jwiegley/nix-config
 https://github.com/eqyiel  
 
 # TODO:
+### Refactor
+- [ ] make use of homebrew functionality (https://github.com/LnL7/nix-darwin/pull/262) 
 ### Docs
 - [ ] document architecture
 - [ ] inspiration repos
