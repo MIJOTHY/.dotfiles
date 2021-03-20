@@ -40,7 +40,7 @@
 
   my = {
     user.home = "/Users/griffithsjr";
-   
+    user.name = "griffithsjr";
     personal = {
       dir = "personal";
       username = "MIJOTHY";

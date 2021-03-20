@@ -65,7 +65,7 @@ in
 
         # Convenience aliases.
         home = mkOption { type = options.home-manager.users.type.functor.wrapped; };
-        user = mkOption { type = types.submodule; };
+        user = mkOption { type = options.users.users.type.functor.wrapped; };
         packages = mkOption {
           type = types.listOf types.package;
           description = "The set of packages to appear in the user environment.";
@@ -108,6 +108,7 @@ in
       home-manager.users.${config.my.username} = mkAliasDefinitions options.my.home;
       users.users.${config.my.username} = mkAliasDefinitions options.my.user;
       my.user.packages = config.my.packages;
+      my.home.home.stateVersion = "20.09";
       my.env.PATH = [ ./bin "$PATH" ];
       environment.extraInit = let
         exportLines = mapAttrsToList (n: v: ''export ${n}="${v}"'') config.my.env;
