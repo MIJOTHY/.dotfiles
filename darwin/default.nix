@@ -1,26 +1,25 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  imports = 
-  [ <home-manager/nix-darwin> 
-  ];
-
-  # Auto upgrade nix package and the daemon service.
-  services.nix-daemon.enable = true;
-
   # Create /etc/zshrc that loads the nix-darwin environment.
-  programs.zsh.enable = true;  
+  programs.zsh.enable = true;
   environment.shells = [ pkgs.zsh ];
 
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
 
-  nix = {
-    # Auto-upgrade Nix package.
-    package = pkgs.nix;
+  services.nix-daemon.enable = true;
 
+  users.nix.configureBuildUsers = true;
+
+  nix = {
+    package = pkgs.nixFlakes;
+    registry.nixpkgs.flake = inputs.nixpkgs;
     readOnlyStore = true;
+    extraOptions = ''
+      experimental-features = nix-command flakes ca-references
+    '';
 
     gc = {
       # Automatically run the Nix garbage collector.
@@ -31,12 +30,12 @@
 
       options = "--delete-older-than 10d";
     };
+
   };
 
-  nixpkgs.overlays = import ./packages;
-  nixpkgs.config.allowUnfree = true; 
-
-  home-manager.useUserPackages = true;
+  nixpkgs = {
+    config.allowUnfree = true;
+  };
 
   # https://github.com/LnL7/nix-darwin/issues/139
   system.build.applications = pkgs.lib.mkForce (pkgs.buildEnv {
