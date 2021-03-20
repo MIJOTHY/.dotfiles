@@ -1,0 +1,84 @@
+{
+  "nodes": {
+    "darwin": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1613595894,
+        "narHash": "sha256-MOk/7rCAUB5Lf4GL+HimvyAAZXYEw8gWsq5nW4PPQQA=",
+        "owner": "LnL7",
+        "repo": "nix-darwin",
+        "rev": "5c3146b75d5d478f0693d0ea6c83f1da8382ff56",
+        "type": "github"
+      },
+      "original": {
+        "owner": "LnL7",
+        "ref": "master",
+        "repo": "nix-darwin",
+        "type": "github"
+      }
+    },
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1616318638,
+        "narHash": "sha256-E6ABXtzw6bHmrIirB1sJL6S2MEa3sfcvRLzRa92frCo=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "ddcd476603dfd3388b1dc8234fa9d550156a51f5",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "master",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1615918229,
+        "narHash": "sha256-kWJ9YuDQdrvo8Mu0M/5uMX3crfaDExAJ7KAwYrYSQeo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5b3290333a2048e07aadaa2dc934a2335525ba0a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "5b3290333a2048e07aadaa2dc934a2335525ba0a",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "private": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-qjYg3kTW9tKneS+24/4MCkyOpcpEy8e3sD7+YPkcZok=",
+        "path": "/Users/griffithsjr/.private",
+        "type": "path"
+      },
+      "original": {
+        "path": "/Users/griffithsjr/.private",
+        "type": "path"
+      }
+    },
+    "root": {
+      "inputs": {
+        "darwin": "darwin",
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "private": "private"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

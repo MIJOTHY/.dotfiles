@@ -30,38 +30,23 @@ dep: $(DARWIN_REBUILD) $(BREW)
 	sudo launchctl start org.nixos.nix-daemon
 .PHONY: dep
 
-FLAGS   	+=-I "config=$(WORKDIR)/config"
-FLAGS 		+=-I "modules=$(WORKDIR)/modules"
+ACTIVATE := ./result/activate-user
+
 ifdef DEBUG
 FLAGS		+=--verbose
 FLAGS		+=--show-trace
 endif
-FLAGS		+=-I "darwin-config=$(MY_ENTRYPOINT)"
-NIX_REBUILD     := $(DARWIN_REBUILD) $(FLAGS)
-NIX_BUILD       := nix-build $(FLAGS)
-
-# Channels
-CH_NIXOS 		?="https://nixos.org/channels"
-CH_NIX_DARWIN 	 	?="https://github.com/LnL7/nix-darwin/archive"
-CH_HOME_MANAGER 	?="https://github.com/rycee/home-manager/archive"
-
-channels:
-	nix-channel --add "$(CH_NIXOS)/nixpkgs-unstable" nixpkgs
-	nix-channel --add "$(CH_NIX_DARWIN)/master.tar.gz" darwin
-	nix-channel --add "$(CH_HOME_MANAGER)/master.tar.gz" home-manager
-.PHONY: channels
+NIX_BUILD := nix-flake build .\#darwinConfigurations.$(HOSTNAME).system
+NIX_REBUILD := nix-shell --command "$(NIX_BUILD) $(FLAGS) && $(DARWIN_REBUILD) --flake . $@"
 
 # Initialisation
-install: dep channels update switch
+install: dep update switch
 
 # Updating
 brew-update: 
 	$(BREW) update --quiet
 
-nix-update: 
-	nix-channel --update
-
-update: brew-update nix-update
+update: brew-update 
 
 $(XDG_CONFIG_HOME)/emacs:
 	git clone https://github.com/hlissner/doom-emacs $@

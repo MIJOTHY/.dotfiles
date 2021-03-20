@@ -6,20 +6,10 @@ let
   pwd = toPath ./.;
 in {
   imports = flatten [
-    # Configuration options.
     ./options.nix
   ];
 
-  nix = {
-    # Add my custom setup to the default Nix expression search path.
-    nixPath =
-      [ "config=${pwd}/config"
-        "modules=${pwd}/modules" ];
-  };
-
   my = {
-    secrets = import ./.private/secrets.nix;
-
     # Homedir.
     home = {
       xdg = {

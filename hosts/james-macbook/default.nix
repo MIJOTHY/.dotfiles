@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }: {
   imports = [
-    ../../.
-
-    ../../darwin-configuration.nix
     ../../modules/desktop
 
     ../../modules/dev/default.nix
