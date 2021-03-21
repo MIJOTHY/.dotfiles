@@ -7,7 +7,7 @@
       # Apparently not needed, as the scripting addition is injected
       # automatically?
       enableScriptingAddition = false;
-      extraConfig = builtins.readFile <config/yabai/rc>;
+      extraConfig = builtins.readFile ../../../config/yabai/rc;
     };
   };
 

@@ -4,7 +4,7 @@ with lib;
   config = {
     my = {
       home.home.file = {
-        ".lein/profiles.clj".source = <config/lein/profiles.clj>;
+        ".lein/profiles.clj".source = ../../config/lein/profiles.clj;
       };
       packages = with pkgs; [
         clojure

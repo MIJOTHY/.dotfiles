@@ -4,7 +4,7 @@
     home = {
       home.file = {
         ".ssh/id_rsa_personal".text = config.my.secrets.personal.id_rsa;
-        ".ssh/id_rsa_personal.pub".source = <config/ssh/id_rsa_personal.pub>;
+        ".ssh/id_rsa_personal.pub".source = ../../config/ssh/id_rsa_personal.pub;
         ".ssh/id_rsa_work".text = config.my.secrets.work.id_rsa;
         ".ssh/id_rsa_work.pub".text = config.my.secrets.work.id_rsa_pub;
       };

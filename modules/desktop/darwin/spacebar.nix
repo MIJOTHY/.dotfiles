@@ -4,7 +4,7 @@
     spacebar = {
       enable = true;
       package = pkgs.spacebar;
-      extraConfig = builtins.readFile <config/spacebar/rc>;
+      extraConfig = builtins.readFile ../../../config/spacebar/rc;
     };
   };
 }

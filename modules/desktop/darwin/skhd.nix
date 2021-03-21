@@ -24,7 +24,9 @@
         app < alt - w : open -na /Applications/Nix/Firefox.app
         app < alt - e : open -na /Applications/Nix/Emacs.app
         app < alt - t : kitty
-      '' + builtins.readFile <config/skhd/rc>;
+
+        ${builtins.readFile ../../../config/skhd/rc}
+      '';
     };
   };
 

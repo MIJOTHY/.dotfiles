@@ -10,15 +10,15 @@ with lib;
         };
 
         xdg.configFile."doom/config.el".text =
-          builtins.readFile <config/emacs/config.el> + ''
+          builtins.readFile ../../config/emacs/config.el + ''
             ;; projectile settings
             (setq projectile-project-search-path
               '("~/${config.my.work.dir}/"
                 "~/${config.my.personal.dir}/"))
           '';
 
-        xdg.configFile."doom/init.el".source = <config/emacs/init.el>;
-        xdg.configFile."doom/packages.el".source = <config/emacs/packages.el>;
+        xdg.configFile."doom/init.el".source = ../../config/emacs/init.el;
+        xdg.configFile."doom/packages.el".source = ../../config/emacs/packages.el;
       };
 
       packages = with pkgs; [
