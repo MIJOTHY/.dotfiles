@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, undmg }:
+{ stdenv, lib, fetchurl, undmg }:
 
 stdenv.mkDerivation rec {
   pname = "Slack";
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = "428ec2b5a9d5eb3b408c1cafa3977daeff0391c7d71656773c6ce535d8e0424c";
   };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "Slack, several people are typing";
     homepage = "https://slack.com/intl/en-gb/";
     maintainers = [ maintainers.griffithsjr ];

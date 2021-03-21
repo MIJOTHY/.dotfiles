@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, undmg, unzip }:
+{ stdenv, lib, fetchurl, undmg, unzip }:
 
 stdenv.mkDerivation rec {
   pname = "iTerm2";
@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
     sha256 = "6811b520699e8331b5d80b5da1e370e0ed467e68bc56906f08ecfa986e318167";
   };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "iTerm2 is a replacement for Terminal and the successor to iTerm";
     homepage = "https://www.iterm2.com";
     maintainers = [ maintainers.griffithsjr ];
