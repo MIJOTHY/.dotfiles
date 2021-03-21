@@ -6,7 +6,7 @@
   my = {
     home = {
       xdg.configFile = {
-        "zsh/rc.d/rc.fzf.zsh".source = <config/fzf/rc.zsh>;
+        "zsh/rc.d/rc.fzf.zsh".source = ../../config/fzf/rc.zsh;
         "zsh/rc.d/rc.term.zsh".text = ''
             alias mkdir='mkdir -p'
             alias tree="tree -a -I '.git'"

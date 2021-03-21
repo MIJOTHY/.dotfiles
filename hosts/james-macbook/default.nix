@@ -3,28 +3,28 @@
     ../../.
 
     ../../darwin-configuration.nix
-    <modules/desktop>
+    ../../modules/desktop
 
-    <modules/dev>
-    <modules/dev/agda.nix>
-    <modules/dev/clojure.nix>
+    ../../modules/dev/default.nix
+    ../../modules/dev/agda.nix
+    ../../modules/dev/clojure.nix
 
-    <modules/editors/emacs.nix>
-    <modules/editors/nvim.nix>
+    ../../modules/editors/emacs.nix
+    ../../modules/editors/nvim.nix
 
-    <modules/media>
+    ../../modules/media/default.nix
 
-    <modules/ops>
+    ../../modules/ops/default.nix
 
-    <modules/term>
-    <modules/term/direnv.nix>
-    <modules/term/git.nix>
-    <modules/term/zsh.nix>
-    <modules/term/kitty.nix>
-    <modules/term/ssh.nix>
+    ../../modules/term/default.nix
+    ../../modules/term/direnv.nix
+    ../../modules/term/git.nix
+    ../../modules/term/zsh.nix
+    ../../modules/term/kitty.nix
+    ../../modules/term/ssh.nix
 
-    <modules/web>
-    <modules/web/firefox.nix>
+    ../../modules/web/default.nix
+    ../../modules/web/firefox.nix
   ];
 
   nix = {

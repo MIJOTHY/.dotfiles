@@ -2,7 +2,7 @@
 {
   my = {
     home = {
-      xdg.configFile."git/.gitmessage".source = <config/git/.gitmessage>;
+      xdg.configFile."git/.gitmessage".source = ../../config/git/.gitmessage;
       programs = {
         git = {
           enable = true;

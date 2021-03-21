@@ -9,7 +9,7 @@ with lib;
       withRuby = false;
       viAlias = true;
       vimAlias = true;
-      extraConfig = builtins.readFile <config/nvim/init.vim>;
+      extraConfig = builtins.readFile ../../config/nvim/init.vim;
     };
   };
 }
