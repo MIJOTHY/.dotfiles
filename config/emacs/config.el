@@ -28,7 +28,7 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
-(setq display-fill-column-indicator-mode t)
+(setq global-display-fill-column-indicator-mode t)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
