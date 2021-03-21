@@ -4,7 +4,9 @@
     yabai = {
       enable = true;
       package = pkgs.yabai;
-      enableScriptingAddition = true;
+      # Apparently not needed, as the scripting addition is injected
+      # automatically?
+      enableScriptingAddition = false;
       extraConfig = builtins.readFile <config/yabai/rc>;
     };
   };
