@@ -1,4 +1,4 @@
-{ stdenv, fetchurl, undmg }:
+{ stdenv, lib, fetchurl, undmg }:
 
 stdenv.mkDerivation rec {
   pname = "gimp";
@@ -19,7 +19,7 @@ stdenv.mkDerivation rec {
     sha256 = "60631e39a1042c38cc281bc3213a76be109fb909b9671fb03c55cf5cf31ea632";
   };
 
-  meta = with stdenv.lib; {
+  meta = with lib; {
     description = "The GIMP image editor";
     homepage = "https://www.gimp.org";
     maintainers = [ maintainers.griffithsjr ];
