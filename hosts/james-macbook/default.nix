@@ -7,7 +7,7 @@
     ../../modules/dev/clojure.nix
 
     ../../modules/editors/emacs.nix
-    ../../modules/editors/nvim.nix
+    ../../modules/editors/vim.nix
 
     ../../modules/media/default.nix
 

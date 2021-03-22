@@ -1,5 +1,4 @@
 { config, options, lib, pkgs, ... }:
-with lib;
 { my = {
     home.programs.neovim = {
       # FIXME: broken on unstable
