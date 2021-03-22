@@ -12,6 +12,7 @@ fi
 # End Nix
 EOF
 ```
+TODO: perhaps you can just source it, and skip the logout step
 2. Log out and back in
 3. Enable the experimental features
 ```sh
@@ -43,6 +44,7 @@ https://github.com/eqyiel
 # TODO:
 ### Refactor
 - [ ] make use of homebrew functionality (https://github.com/LnL7/nix-darwin/pull/262) 
+- [ ] sops-nix for secrets
 ### Docs
 - [ ] document architecture
 - [ ] inspiration repos
