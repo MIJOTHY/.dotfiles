@@ -3,3 +3,4 @@ result
 
 .private
 .DS_Store
+.direnv
