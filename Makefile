@@ -1,3 +1,5 @@
+
+#DEPRECATED, just have to migrate brew
 # https://github.com/martinbaillie/dotfiles/blob/master/Makefile
 # https://github.com/hlissner/dotfiles/blob/master/Makefile
 
@@ -30,52 +32,15 @@ dep: $(DARWIN_REBUILD) $(BREW)
 	sudo launchctl start org.nixos.nix-daemon
 .PHONY: dep
 
-ACTIVATE := ./result/activate-user
-
-ifdef DEBUG
-FLAGS		+=--verbose
-FLAGS		+=--show-trace
-endif
-NIX_BUILD := nix-flake build .\#darwinConfigurations.$(HOSTNAME).system
-NIX_REBUILD := nix-shell --command "$(NIX_BUILD) $(FLAGS) && $(DARWIN_REBUILD) --flake . $@"
-
 # Initialisation
-install: dep update switch
+install: dep update 
 
 # Updating
-brew-update: 
+update: 
 	$(BREW) update --quiet
-
-update: brew-update 
-
-$(XDG_CONFIG_HOME)/emacs:
-	git clone https://github.com/hlissner/doom-emacs $@
-# Sadly not everything in the Emacs world is supporting XDG yet.
-	ln -sf $@ $(HOME)/.emacs.d
-
-config-emacs: $(XDG_CONFIG_HOME)/emacs ; doom install
-.PHONY: config-emacs
 
 gc:
 	$(BREW) bundle cleanup --zap -f
 	nix-collect-garbage -d
 	sudo nix-collect-garbage -d
 .PHONY:	gc
-
-test: $(NIX_REBUILD) test
-.PHONY: test
-
-switch: 	
-	$(NIX_REBUILD) switch
-	doom sync
-rollback: 	
-	  $(NIX_REBUILD) switch --rollback
-	  doom sync
-upgrade: 	
-	  $(NIX_REBUILD) switch --upgrade
-	  doom sync
-boot: 		
-	  $(NIX_REBUILD) boot
-dry: 		
-	  $(NIX_REBUILD) dry-build
-.PHONY:		switch rollback boot dry

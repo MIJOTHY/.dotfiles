@@ -109,7 +109,6 @@ in
       users.users.${config.my.username} = mkAliasDefinitions options.my.user;
       my.user.packages = config.my.packages;
       my.home.home.stateVersion = "20.09";
-      my.env.PATH = [ ./bin "$PATH" ];
       environment.extraInit = let
         exportLines = mapAttrsToList (n: v: ''export ${n}="${v}"'') config.my.env;
       in ''
