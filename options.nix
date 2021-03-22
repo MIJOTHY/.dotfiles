@@ -71,14 +71,6 @@ in
           description = "The set of packages to appear in the user environment.";
         };
 
-        # Darwin.
-        casks = mkOption { 
-          type = with types; nullOr (listOf str);
-          description = ''
-            Homebrew casks to install on the macOS/Darwin system.
-            '';
-        };
-
         # Shell and environment.
         env = mkOption {
           type = with types;

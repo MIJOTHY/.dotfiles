@@ -5,25 +5,6 @@
     ./darwin/spacebar.nix
   ];
  
-  my = {
-    home.xdg.configFile."homebrew/Brewfile" = {
-      text = let casks = map (v: ''cask "${v}"'') config.my.casks;
-      in ''
-        tap "homebrew/core"
-        tap "homebrew/bundle"
-        tap "homebrew/services"
-        tap "homebrew/cask"
-        tap "homebrew/cask-versions"
-        ${lib.concatStringsSep "\n" casks}
-      '';
-      onChange = "brew bundle || true";
-    };
-    env.HOMEBREW_BUNDLE_FILE = "$XDG_CONFIG_HOME/homebrew/Brewfile";
-
-    packages = [];
-    casks = [];
-  };
-
   fonts = {
     enableFontDir = true;
     fonts = [

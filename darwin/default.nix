@@ -37,6 +37,11 @@
     config.allowUnfree = true;
   };
 
+  homebrew = {
+    enable = true;
+    cleanup = "zap";
+  };
+
   # https://github.com/LnL7/nix-darwin/issues/139
   system.build.applications = pkgs.lib.mkForce (pkgs.buildEnv {
     name = "applications";

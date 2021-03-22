@@ -3,9 +3,11 @@
   my.packages = with pkgs; [
    my.Slack
   ];
- 
-  my.casks = [
-    "spotify"
-    "google-chrome"
-  ];
+
+  homebrew = {
+    casks = [
+      "spotify"
+      "google-chrome"
+    ];
+  };
 }

@@ -7,8 +7,10 @@
       kubectl
       kustomize
     ];
+  };
 
-    casks = [ 
+  homebrew = {
+    casks = [
       "docker"
     ];
   };

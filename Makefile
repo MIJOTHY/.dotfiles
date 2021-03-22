@@ -1,8 +1,3 @@
-
-#DEPRECATED, just have to migrate brew
-# https://github.com/martinbaillie/dotfiles/blob/master/Makefile
-# https://github.com/hlissner/dotfiles/blob/master/Makefile
-
 SHELL 		:= bash
 .SHELLFLAGS 	:= -euo pipefail -c
 .ONESHELL: ;
@@ -22,12 +17,7 @@ $(DARWIN_REBUILD):
 	nix-build $(URL) -A installer
 	yes | ./result/bin/darwin-installer
 
-BREW ?=$(if $(shell which brew 2>/dev/null),\
-	$(shell which brew),/usr/local/bin/brew)
-$(BREW): URL=https://raw.githubusercontent.com/Homebrew/install/master/install
-$(BREW): ; ruby -e "$$(curl -fsSL $(URL))"
-
-dep: $(DARWIN_REBUILD) $(BREW)
+dep: $(DARWIN_REBUILD)
 	sudo launchctl stop org.nixos.nix-daemon
 	sudo launchctl start org.nixos.nix-daemon
 .PHONY: dep
@@ -35,12 +25,7 @@ dep: $(DARWIN_REBUILD) $(BREW)
 # Initialisation
 install: dep update 
 
-# Updating
-update: 
-	$(BREW) update --quiet
-
 gc:
-	$(BREW) bundle cleanup --zap -f
 	nix-collect-garbage -d
 	sudo nix-collect-garbage -d
 .PHONY:	gc
