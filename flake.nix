@@ -27,17 +27,25 @@
       secrets = import private;
     in
       {
-        darwinConfigurations.james-macbook = darwin.lib.darwinSystem {
-          modules = [
-            ./hosts/james-macbook/default.nix
-            { config.my.secrets = secrets; }
-            ./default.nix
-            ./darwin/default.nix
-            home-manager.darwinModules.home-manager
-            { nixpkgs.overlays = import ./packages; }
-            { home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;}
-          ];
+        darwinConfigurations = {
+          bootstrap = darwin.lib.darwinSystem {
+            modules = [
+              ./darwin/bootstrap.nix
+            ];
+          };
+
+          james-macbook = darwin.lib.darwinSystem {
+            modules = [
+              ./hosts/james-macbook/default.nix
+              { config.my.secrets = secrets; }
+              ./default.nix
+              ./darwin/default.nix
+              home-manager.darwinModules.home-manager
+              { nixpkgs.overlays = import ./packages; }
+              { home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;}
+            ];
+          };
         };
       };
 }
