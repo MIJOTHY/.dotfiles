@@ -43,7 +43,6 @@ https://github.com/eqyiel
 
 # TODO:
 ### Refactor
-- [ ] make use of homebrew functionality (https://github.com/LnL7/nix-darwin/pull/262) 
 - [ ] sops-nix for secrets
 ### Docs
 - [ ] document architecture

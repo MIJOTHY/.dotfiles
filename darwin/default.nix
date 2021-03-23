@@ -40,6 +40,13 @@
   homebrew = {
     enable = true;
     cleanup = "zap";
+    taps = [
+      "homebrew/core"
+      "homebrew/bundle"
+      "homebrew/services"
+      "homebrew/cask"
+      "homebrew/cask-versions"
+    ];
   };
 
   # https://github.com/LnL7/nix-darwin/issues/139
