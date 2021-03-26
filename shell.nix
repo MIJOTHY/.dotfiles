@@ -11,7 +11,7 @@
   }) {}
 }:
 let
-  pwd = builtins.toPath ./.;
+  pwd = builtins.toString ./.;
   nix-rebuild = pkgs.writeShellScriptBin "nix-rebuild" ''
     set -euo pipefail
      
@@ -24,7 +24,8 @@ let
 
       flags=()      
       if [ "''${DEBUG:-false}" = true ]; then
-        flags+=(--show-trace) 
+        flags+=(--show-trace)
+        flags+=(--verbose)
       fi
 
       ${pkgs.nixUnstable}/bin/nix build ${pwd}\#darwinConfigurations.$(hostname -s).system "''${flags[@]}"
