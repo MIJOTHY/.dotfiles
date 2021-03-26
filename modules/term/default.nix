@@ -24,6 +24,7 @@
         fzf = {
           enable = true;
           enableZshIntegration = true;
+          defaultCommand = "${pkgs.fd}/bin/fd --type f --hidden --follow --exclude .git";
         };
         bat = {
           enable = true;
