@@ -29,7 +29,7 @@ let
       fi
 
       ${pkgs.nixUnstable}/bin/nix build ${pwd}\#darwinConfigurations.$(hostname -s).system "''${flags[@]}"
-      ${pwd}/result/sw/bin/darwin-rebuild "$cmd" --flake . "''${flags[@]}"
+      /run/current-system/sw/bin/darwin-rebuild "$cmd" --flake . "''${flags[@]}"
     }
     
     main "$@"

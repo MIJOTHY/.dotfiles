@@ -47,5 +47,9 @@
             ];
           };
         };
+
+        devShell."x86_64-darwin" = import ./shell.nix {
+          pkgs = nixpkgs.legacyPackages."x86_64-darwin";
+        };
       };
 }
